@@ -108,6 +108,160 @@
             h2 { font-size: 1.2rem; }
             body { padding: 10px; }
         }
+
+                /* Smooth scrolling behavior when clicking the button */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Styling for the target Event Info Section */
+        .event-info-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px dashed #e0e0e0;
+            text-align: left;
+        }
+
+        .event-info-section h3 {
+            color: #8a1c14;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Clean alignment for rows on small mobile displays */
+        .info-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 8px;
+        }
+        
+        /* Side-by-side layout for larger mobile/desktop screens */
+        @media (min-width: 480px) {
+            .info-row {
+                flex-direction: row;
+            }
+            .info-row strong {
+                width: 100px;
+                flex-shrink: 0;
+            }
+        }
+
+        /* Small secondary button for navigation */
+        .map-btn {
+            display: block;
+            text-align: center;
+            background-color: #fff;
+            color: #b35900;
+            border: 2px solid #b35900;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+                /* Container styling for the entire musicians block */
+        .musicians-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px dashed #e0e0e0;
+        }
+
+        .musicians-section h3 {
+            color: #8a1c14;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Individual Musician Cards styling */
+        .musician-card {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .musician-info h4 {
+            color: #b35900;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #fff5eb;
+            padding-bottom: 4px;
+        }
+
+        .musician-info p {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.5;
+            text-align: justify;
+        }
+                /* Layout container for photo + text alignment */
+        .musician-card {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            
+            /* Uses flexbox to sit side-by-side if there's enough room */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Portrait rules optimized for high-density smartphone screens */
+        .musician-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #b35900;
+            flex-shrink: 0;
+        }
+
+        .musician-info {
+            flex: 1;
+            width: 100%;
+        }
+
+        .musician-info h4 {
+            color: #b35900;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #fff5eb;
+            padding-bottom: 4px;
+            text-align: center;
+        }
+
+        .musician-info p {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        /* Desktop and Tablet upgrade: shifts photo to the side dynamically */
+        @media (min-width: 480px) {
+            .musician-card {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .musician-info h4 {
+                text-align: left;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -132,6 +286,75 @@
 
         <!-- Call to Action Link / Map button -->
         <a href="#details" class="btn">View Event Details</a>
+
+        <!-- NEW: The target section that the button links to -->
+        <div id="details" class="event-info-section">
+            <h3>Event Information</h3>
+            
+            <div class="info-row">
+                <strong>📅 Date:</strong> <span>Saturday, October 24, 2026</span>
+            </div>
+            <div class="info-row">
+                <strong>⏰ Time:</strong> <span>4:00 PM onwards</span>
+            </div>
+            <div class="info-row">
+                <strong>📍 Venue:</strong> 
+                <span>
+                    Community Theater Auditorium<br>
+                    123 Main Street, Fremont, CA
+                </span>
+            </div>
+
+            <!-- Optional Mobile Friendly Map Button -->
+            <a href="https://google.com" target="_blank" class="map-btn">Open in Google Maps</a>
+        </div>
+
+                <!-- Musicians Section Begins -->
+        <div class="musicians-section">
+            <h3>Accompanying Musicians</h3>
+
+                    <!-- Musicians Section Begins -->
+        <div class="musicians-section">
+            <h3>Accompanying Musicians</h3>
+
+            <!-- Musician 1 -->
+            <div class="musician-card">
+                <img src="arun.png" alt="Sri. Arun Mahadevan" class="musician-photo">
+                <div class="musician-info">
+                    <h4>Vocal - Sri. Arun Mahadevan</h4>
+                    <p>Arun Mahadevan is a Carnatic vocalist currently under the training of Vidwan Delhi P. Sunderrajan. He is a graded artist at the Bengaluru station of All India Radio, and has performed concerts at many venues in India and the USA, in addition to providing vocal accompaniment for several Bharathanatyam and Kuchipudi recitals. Arun holds a PhD in Bioengineering and works for a biotech company in Millbrae, CA. He is also a faculty member at the Shruthi Swara Laya school of music in Fremont, CA.</p>
+                </div>
+            </div>
+
+            <!-- Musician 2 -->
+            <div class="musician-card">
+                <img src="manasa.png" alt="Smt. Manasa Suresh" class="musician-photo">
+                <div class="musician-info">
+                    <h4>Vocal - Smt. Manasa Suresh</h4>
+                    <p>Manasa Suresh is a disciple of late Padma Bhushan Sri. P. S. Narayanaswamy. She received previous training from her mother, Smt. Anu Suresh, and was also guided by Kunnakudi Sri. M. Balamurali Krishna. Manasa has performed concerts in the US, India, UK, and Sri Lanka, in addition to providing vocal support for dance recitals and productions. She was also a Fulbright US Scholar and a graded artist at All India Radio, Chennai. Manasa works for Children's Health Council in Palo Alto, CA, and is also a faculty member at Shruthi Swara Laya School of Music, Fremont, CA.</p>
+                </div>
+            </div>
+
+            <!-- Musician 3 -->
+            <div class="musician-card">
+                <img src="amit.png" alt="Sri. Amit Ranganathan" class="musician-photo">
+                <div class="musician-info">
+                    <h4>Mridangam - Sri. Amit Ranganathan</h4>
+                    <p>Amit Ranganathan has been a disciple of Sri. Ravindra Bharathy Sridharan for the past 16 years. Since performing his arangetram in 2013, Amit has accompanied upcoming and senior musicians across the USA and in the Chennai December Music Season. Additionally, Amit has played for numerous Bharatnatyam and vocal arangetrams around the USA. Amit has been a participant in the Cleveland Thygaraja festival. He has won numerous awards in the junior and senior mridangam and accompaniment categories including the first-place award in the senior mridangam competition. Amit holds a bachelor's degree in Computer Science and currently works as a Software Engineer in the Bay Area.</p>
+                </div>
+            </div>
+
+            <!-- Musician 4 -->
+            <div class="musician-card">
+                <img src="giridhari.png" alt="Sri. Giridhari V" class="musician-photo">
+                <div class="musician-info">
+                    <h4>Violin - Sri. Giridhari V</h4>
+                    <p>V Giridhari is a disciple of violin exponent and guru Sangeetha Kalanidhi Kum. A. Kanyakumari, and has had the privilege to accompany her at various venues across India and the US. He has regularly performed during the December music season in Chennai, at prestigious venues such as the Music Academy. Besides, he regularly performs in the US, and has also performed at various international music festivals. He is a research scientist at Meta, and graduated with a BTech/MTech from IIT Madras, and a PhD from Northeastern University.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Musicians Section Ends -->
+
     </div>
 
 </body>
